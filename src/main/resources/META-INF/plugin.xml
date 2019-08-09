@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.fei.sqlMerge</id>
+    <name>jpa sql 组合插件</name>
+    <vendor email="1615228517@qq.com" url="http://www.yourcompan.com">YourCompan</vendor>
+    <!--参考地址 https://blog.csdn.net/ExcellentYuXiao/article/details/80273347
+    https:      //yq.aliyun.com/articles/691224-->
+    <description><![CDATA[
+        将控制台jpa输出的sql和参数,自动拼接为一个完整的sql,可以直接放到数据库执行
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+<!--            <toolWindow id="My Sample Tool Window" icon="/icons/a.png" anchor="right" factoryClass="myPackage.SqlToolWindowFactory"/>-->
+    </extensions>
+
+    <actions>
+        <group id="JpaPlugin.Splice" text="JpaSqlSplice" description="JpaSqlSplice">
+            <add-to-group group-id="ConsoleView.PopupMenu" anchor="last"/>
+            <add-to-group group-id="BasicEditorPopupMenu" anchor="last"/>
+            <action id="JpaPlugin.SpliceAction" class="com.mf.SpliceAction" text="SpliceAction"
+                    description="SpliceActionDesc">
+            </action>
+        </group>
+
+
+<!--        <action id="a" class="com.mf.a" text="a" description="a">-->
+<!--            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="WindowMenu"/>-->
+<!--        </action>-->
+    </actions>
+
+</idea-plugin>
